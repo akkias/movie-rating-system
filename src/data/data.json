@@ -1,0 +1,64 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Mission: Impossible - Fallout",
+      "rating": 3,
+      "poster": "mi.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Searching",
+      "rating": 3,
+      "poster": "searching.jpg"
+    },
+    {
+      "id": 3,
+      "title": "A Star Is Born",
+      "rating": 2.3,
+      "poster": "star_is_born.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Deadpool 2",
+      "rating": 3,
+      "poster": "dp_2.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Avengers: Infinity War ",
+      "rating": 3,
+      "poster": "avengers_iw.jpg"
+    },
+    {
+      "id": 6,
+      "title": "You Were Never Really Here",
+      "rating": 3,
+      "poster": "ywnrh.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Blindspotting",
+      "rating": 3,
+      "poster": "blindspotting.jpg"
+    },
+    {
+      "id": 8,
+      "title": "A Quiet Place",
+      "rating": 3,
+      "poster": "a_quiet_place.jpg"
+    },
+    {
+      "id": 9,
+      "title": "A Prayer Before Dawn",
+      "rating": 3,
+      "poster": "prayer-dawn-poster.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Aquaman",
+      "rating": 3,
+      "poster": "aquaman.jpg"
+    }
+  ]
+}
