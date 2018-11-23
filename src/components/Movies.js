@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import MovieCard from './MovieCard';
+import {getMovies} from '../actions';
+
 const MOVIES_URL = "http://localhost:3001/movies";
 
 class Movies extends Component {
@@ -12,14 +15,15 @@ class Movies extends Component {
     fetchMovies() {
         fetch(`${MOVIES_URL}?_sort=rating&_order=desc`)
         .then(response => response.json())
-        .then(movies => {
-            this.setState({movies: movies});
+        .then(response => {
+            //this.setState({movies: movies});
+            this.props.dispatch(getMovies(response));
         })
     }
     componentDidMount() {
         this.fetchMovies();
     }
-    handleRatingChange(movieId, rating) {
+    handleRatingChange(rating, movieId) {
         fetch(`${MOVIES_URL}/${movieId}`, {
             method: 'PATCH',
             headers: {
@@ -32,8 +36,16 @@ class Movies extends Component {
     }
     render() {
         return(
-            <MovieCard movies={this.state.movies} setRating={(movieId, rating) => this.handleRatingChange(movieId, rating)} />
+            <>
+                <MovieCard movies={this.props.movies} setRating={(rating, movieId) => this.handleRatingChange(movieId, rating)} />
+            </>
         )
     }
 }
-export default Movies;
+
+const mapStateToProps =  function(state) { 
+    return {
+        movies: state.moviesData
+    }
+}
+export default connect(mapStateToProps)(Movies);

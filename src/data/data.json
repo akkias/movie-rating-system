@@ -3,37 +3,37 @@
     {
       "id": 1,
       "title": "Mission: Impossible - Fallout",
-      "rating": 1,
+      "rating": 5,
       "poster": "mi.jpg"
     },
     {
       "id": 2,
       "title": "Searching",
-      "rating": 1,
+      "rating": 8,
       "poster": "searching.jpg"
     },
     {
       "id": 3,
       "title": "A Star Is Born",
-      "rating": 5,
+      "rating": 10,
       "poster": "star_is_born.jpg"
     },
     {
       "id": 4,
       "title": "Deadpool 2",
-      "rating": 4,
+      "rating": 1,
       "poster": "dp_2.jpg"
     },
     {
       "id": 5,
       "title": "Avengers: Infinity War ",
-      "rating": 1,
+      "rating": 7,
       "poster": "avengers_iw.jpg"
     },
     {
       "id": 6,
       "title": "You Were Never Really Here",
-      "rating": 5,
+      "rating": 2,
       "poster": "ywnrh.jpg"
     },
     {
@@ -45,7 +45,7 @@
     {
       "id": 8,
       "title": "A Quiet Place",
-      "rating": 5,
+      "rating": 1,
       "poster": "a_quiet_place.jpg"
     },
     {
