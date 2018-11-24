@@ -3,3 +3,7 @@ export const sortDesc = (array) => {
         return b.rating - a.rating;
     })
 }
+
+export const getRandomNum = (num) => {
+    return Math.floor(Math.random() * num) + 1;
+}
