@@ -4,3 +4,13 @@ export function getMovies(movies) {
         movies
     }
 }
+
+export function setRating(rating, index) {
+    return {
+        type: "SET_RATING",
+        payload: {
+            index,
+            rating
+        }
+    }
+}

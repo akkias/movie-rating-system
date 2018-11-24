@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import ReactInterval from 'react-interval';
 import MovieCard from './MovieCard';
-import {getMovies} from '../actions';
+import {getMovies, setRating} from '../actions';
 
 const MOVIES_URL = "http://localhost:3001/movies";
 
@@ -11,19 +13,21 @@ class Movies extends Component {
         this.state = {
             movies: []
         }
+        this.fetchMovies = this.fetchMovies.bind(this);
+        this.handleRatingChange = this.handleRatingChange.bind(this);
     }
     fetchMovies() {
         fetch(`${MOVIES_URL}?_sort=rating&_order=desc`)
         .then(response => response.json())
         .then(response => {
-            //this.setState({movies: movies});
-            this.props.dispatch(getMovies(response));
+            this.props.getMovies(response);
         })
     }
     componentDidMount() {
         this.fetchMovies();
     }
     handleRatingChange(rating, movieId) {
+        this.props.setRating(rating, movieId);
         fetch(`${MOVIES_URL}/${movieId}`, {
             method: 'PATCH',
             headers: {
@@ -32,12 +36,17 @@ class Movies extends Component {
             },
             body: JSON.stringify({rating: rating})
         })
-        .then(() => this.fetchMovies());
     }
     render() {
         return(
             <>
-                <MovieCard movies={this.props.movies} setRating={(rating, movieId) => this.handleRatingChange(movieId, rating)} />
+                <div className="header">
+                    <h1>Movie Rating App</h1>
+                    <button className="random-rating-btn">
+                        <i className="fas fa-sync fa-spin"></i>Random Rating
+                    </button>
+                </div>
+                <MovieCard movies={this.props.movies} setRating={(rating, index) => this.handleRatingChange(rating, index)} />
             </>
         )
     }
@@ -48,4 +57,8 @@ const mapStateToProps =  function(state) {
         movies: state.moviesData
     }
 }
-export default connect(mapStateToProps)(Movies);
+function matchDispatchToProps(dispatch){
+return bindActionCreators({setRating, getMovies}, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Movies);
