@@ -6865,7 +6865,7 @@ react-dev-utils@^6.1.1:
     strip-ansi "4.0.0"
     text-table "0.2.0"
 
-react-dom@^16.7:
+react-dom@^16.7.0-alpha.2:
   version "16.7.0-alpha.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.7.0-alpha.2.tgz#16632880ed43676315991d8b412cce6975a30282"
   dependencies:
@@ -6992,7 +6992,7 @@ react-scripts@2.1.1:
   optionalDependencies:
     fsevents "1.2.4"
 
-react-test-renderer@^16.7:
+react-test-renderer@^16.7.0-alpha.2:
   version "16.7.0-alpha.2"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.7.0-alpha.2.tgz#8606a5a82240c405539da0401d7b3572898b5611"
   dependencies:
@@ -7001,7 +7001,7 @@ react-test-renderer@^16.7:
     react-is "^16.7.0-alpha.2"
     scheduler "^0.12.0-alpha.2"
 
-react@^16.7:
+react@^16.7.0-alpha.2:
   version "16.7.0-alpha.2"
   resolved "https://registry.yarnpkg.com/react/-/react-16.7.0-alpha.2.tgz#924f2ae843a46ea82d104a8def7a599fbf2c78ce"
   dependencies:
