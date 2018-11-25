@@ -3,25 +3,25 @@
     {
       "id": 1,
       "title": "Mission: Impossible - Fallout",
-      "rating": 1,
+      "rating": 2,
       "poster": "mi.jpg"
     },
     {
       "id": 2,
       "title": "Searching",
-      "rating": 2,
+      "rating": 5,
       "poster": "searching.jpg"
     },
     {
       "id": 3,
       "title": "A Star Is Born",
-      "rating": 1,
+      "rating": 3,
       "poster": "star_is_born.jpg"
     },
     {
       "id": 4,
       "title": "Deadpool 2",
-      "rating": 4,
+      "rating": 1,
       "poster": "dp_2.jpg"
     },
     {
@@ -33,25 +33,25 @@
     {
       "id": 6,
       "title": "You Were Never Really Here",
-      "rating": 3,
+      "rating": 5,
       "poster": "ywnrh.jpg"
     },
     {
       "id": 7,
       "title": "Blindspotting",
-      "rating": 5,
+      "rating": 4,
       "poster": "blindspotting.jpg"
     },
     {
       "id": 8,
       "title": "A Quiet Place",
-      "rating": 4,
+      "rating": 1,
       "poster": "a_quiet_place.jpg"
     },
     {
       "id": 9,
       "title": "A Prayer Before Dawn",
-      "rating": 1,
+      "rating": 4,
       "poster": "prayer-dawn-poster.jpg"
     },
     {
@@ -69,7 +69,7 @@
     {
       "id": 12,
       "title": "The Lion King",
-      "rating": 4,
+      "rating": 5,
       "poster": "lion_king.jpg"
     }
   ]

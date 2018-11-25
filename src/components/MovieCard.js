@@ -30,7 +30,7 @@ const renderMovie = (props) => {
 const MovieCard = (props) => {  
     return(
         <div className="movie-card-container">
-            {(props.movies && props.movies.length > 1) && renderMovie(props)}
+            {(props.movies && props.movies.length >= 1) && renderMovie(props)}
         </div>
     )
 }

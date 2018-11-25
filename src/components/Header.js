@@ -12,11 +12,9 @@ export const Header = (props) => {
             var myFunction = function() {
                 props.setRating(getRandomNum(5),getRandomNum(12), getRandomNum(12));
                 let randomTime = Math.round(Math.random() * (max - min + 1) + min);
-                console.log(randomTime)
                 setTM = setTimeout(myFunction, randomTime * 1000);
             }
             await myFunction();
-            console.log('here')
         }
         catch (err) {
             console.log('fetch failed', err);

@@ -5,7 +5,7 @@ import MovieCard from './MovieCard';
 import Header from './Header';
 import {getMovies, setRating} from '../actions';
 
-const MOVIES_URL = "http://localhost:3001/movies";
+const MOVIES_URL = "https://my-json-server.typicode.com/akkias/json-data/movies";
 
 class Movies extends Component {
     constructor() {
@@ -13,10 +13,8 @@ class Movies extends Component {
         this.state = {
             movies: []
         }
-        this.fetchAllMovies = this.fetchAllMovies.bind(this);
-        this.handleRatingChange = this.handleRatingChange.bind(this);
     }
-    fetchAllMovies() {
+    fetchAllMovies = () => {
         fetch(`${MOVIES_URL}?_sort=rating&_order=desc`)
         .then(response => response.json())
         .then(response => {
@@ -26,7 +24,7 @@ class Movies extends Component {
     componentDidMount() {
         this.fetchAllMovies();
     }
-    async handleRatingChange(rating, index, id) {
+    handleRatingChange = async (rating, index, id) => {
         try {
             await fetch(`${MOVIES_URL}/${id}`, {
                 method: 'PATCH',
@@ -45,8 +43,8 @@ class Movies extends Component {
     render() {
         return(
             <>
-                <Header setRating={(rating, index, id) => this.handleRatingChange(rating, index, id)} />
-                <MovieCard movies={this.props.movies} setRating={(rating, index, id) => this.handleRatingChange(rating, index, id)} />
+                <Header setRating={this.handleRatingChange} />
+                <MovieCard movies={this.props.movies} setRating={this.handleRatingChange} />
             </>
         )
     }
