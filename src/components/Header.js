@@ -9,12 +9,12 @@ export const Header = (props) => {
         try {
             setRR(true);
             let min = 5, max = 10;
-            var myFunction = await function() {
+            var myFunction = function() {
                 props.setRating(getRandomNum(5),getRandomNum(12), getRandomNum(12));
                 let randomTime = Math.round(Math.random() * (max - min + 1) + min);
                 setTM = setTimeout(myFunction, randomTime * 1000);
             }
-            myFunction();
+            await myFunction();
         }
         catch (err) {
             console.log('fetch failed', err);
@@ -24,6 +24,8 @@ export const Header = (props) => {
         clearTimeout(setTM);
         setRR(false);
     }
+    
+
     return(
         <div className="header">
             <h1>Movie Rating App</h1>

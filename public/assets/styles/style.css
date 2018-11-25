@@ -13,19 +13,6 @@ body {
     justify-content: space-between;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) { 
-    .movie-card-container {
-        grid-template-columns: 24% 24% 24% 24%;
-        grid-gap: 1%;
-    }
-}
-
-@media (min-width: 375px) and (max-width: 767px) {
-    .movie-card-container {
-        grid-template-columns: 49% 49%;
-        grid-gap: 1%;
-    }
-  }
 
 .movie-card {
     background: #FFF;
@@ -33,6 +20,23 @@ body {
     margin-bottom: 20px;
     overflow: hidden;
     width: calc(16.667% - 20px);
+}
+@media (min-width: 768px) and (max-width: 1024px) { 
+    .movie-card {
+        width: calc(25% - 20px);
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .movie-card {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 479px) {
+    .movie-card {
+        width: calc(50% - 20px);
+    }
 }
 .movie-card-poster img {
     height: auto;

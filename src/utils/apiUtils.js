@@ -6,7 +6,7 @@ const MOVIES_URL = "https://movies-dbase.herokuapp.com/movies";
 
 export const handleRatingChange = async (rating, index, id) => {
     try {
-        fetch(`${MOVIES_URL}/${id}`, {
+        await  fetch(`${MOVIES_URL}/${id}`, {
             method: 'PATCH',
             headers: {
                 'Accept': 'application/json',
@@ -14,7 +14,7 @@ export const handleRatingChange = async (rating, index, id) => {
             },
             body: JSON.stringify({rating: rating})
         })
-        await movieStore.dispatch(setRating(rating, index, id));
+        movieStore.dispatch(setRating(rating, index, id));
     }
     catch(e) {
         console.log('Error!', e);
