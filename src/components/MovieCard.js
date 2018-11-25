@@ -1,5 +1,7 @@
 import React from 'react';
-import {sortDesc} from '../utils'
+import {sortDesc} from '../utils/functionUtils'
+
+
 import Rating from 'react-rating';
 
 const renderMovie = (props) => {

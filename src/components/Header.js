@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {getRandomNum} from '../utils'
+import {getRandomNum} from '../utils/functionUtils'
 
 export const Header = (props) => {
     let setTM;
@@ -9,12 +9,12 @@ export const Header = (props) => {
         try {
             setRR(true);
             let min = 5, max = 10;
-            var myFunction = function() {
+            var myFunction = await function() {
                 props.setRating(getRandomNum(5),getRandomNum(12), getRandomNum(12));
                 let randomTime = Math.round(Math.random() * (max - min + 1) + min);
                 setTM = setTimeout(myFunction, randomTime * 1000);
             }
-            await myFunction();
+            myFunction();
         }
         catch (err) {
             console.log('fetch failed', err);

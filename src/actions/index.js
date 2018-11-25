@@ -5,12 +5,13 @@ export function getMovies(movies) {
     }
 }
 
-export function setRating(rating, index) {
+export function setRating(rating, index, id) {
     return {
         type: "SET_RATING",
         payload: {
             index,
-            rating
+            rating,
+            id
         }
     }
 }
