@@ -5,14 +5,22 @@ export const Header = (props) => {
     let setTM;
     const [randomRating, setRR] = useState(false);
 
-    const setRandomRating = () => {
-        setRR(true);
-        var myFunction = function() {
-            props.setRating(getRandomNum(5),getRandomNum(12));
-            let randomTime = Math.round(Math.random() * (10000 - 4000)) + 500;
-            setTM = setTimeout(myFunction, randomTime);
+    async function setRandomRating() {
+        try {
+            setRR(true);
+            let min = 5, max = 10;
+            var myFunction = function() {
+                props.setRating(getRandomNum(5),getRandomNum(12), getRandomNum(12));
+                let randomTime = Math.round(Math.random() * (max - min + 1) + min);
+                console.log(randomTime)
+                setTM = setTimeout(myFunction, randomTime * 1000);
+            }
+            await myFunction();
+            console.log('here')
         }
-        myFunction();
+        catch (err) {
+            console.log('fetch failed', err);
+        }
     } 
     const stopRandomRating = () => {
         clearTimeout(setTM);

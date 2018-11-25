@@ -17,7 +17,7 @@ const renderMovie = (props) => {
                                 emptySymbol="far fa-star"
                                 fullSymbol="fas fa-star"
                                 className="movie-card-rating"
-                                onClick={(rating) => props.setRating(rating, index)}
+                                onClick={(rating) => props.setRating(rating, index, movie.id)}
                             />
                         </div>
                     </div>

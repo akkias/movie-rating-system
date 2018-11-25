@@ -26,22 +26,27 @@ class Movies extends Component {
     componentDidMount() {
         this.fetchAllMovies();
     }
-    handleRatingChange(rating, movieId) {
-        this.props.setRating(rating, movieId);
-        fetch(`${MOVIES_URL}/${movieId}`, {
-            method: 'PATCH',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({rating: rating})
-        })
+    async handleRatingChange(rating, index, id) {
+        try {
+            await fetch(`${MOVIES_URL}/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({rating: rating})
+            })
+            this.props.setRating(rating, index)
+        }
+        catch(e) {
+            console.log('Error!', e);
+        }
     }
     render() {
         return(
             <>
-                <Header setRating={(rating, index) => this.handleRatingChange(rating, index)} />
-                <MovieCard movies={this.props.movies} setRating={(rating, index) => this.handleRatingChange(rating, index)} />
+                <Header setRating={(rating, index, id) => this.handleRatingChange(rating, index, id)} />
+                <MovieCard movies={this.props.movies} setRating={(rating, index, id) => this.handleRatingChange(rating, index, id)} />
             </>
         )
     }
