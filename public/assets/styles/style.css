@@ -87,3 +87,18 @@ body {
 .random-rating-btn:focus {
     outline: none;
 }
+.page-loader {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 92px);
+    justify-content: center;
+  }
+  .page-loader .fa-spinner {
+    background: #FFF;
+    color: #009688;
+    border-radius: 50%;
+    box-shadow: rgba(3, 3, 3, 0.2) 0px 0 10px;
+    font-size: 2rem;
+    padding: 15px;
+
+  }

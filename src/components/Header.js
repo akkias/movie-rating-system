@@ -7,10 +7,9 @@ export const Header = (props) => {
 
     async function setRandomRating() {
         try {
-            setRR(true);
             let min = 5, max = 10;
             var myFunction = function() {
-                props.setRating(getRandomNum(5),getRandomNum(12), getRandomNum(12));
+                props.setRandomRatingFunc(getRandomNum(5),getRandomNum(12), getRandomNum(12));
                 let randomTime = Math.round(Math.random() * (max - min + 1) + min);
                 setTM = setTimeout(myFunction, randomTime * 1000);
             }
@@ -22,7 +21,6 @@ export const Header = (props) => {
     } 
     const stopRandomRating = () => {
         clearTimeout(setTM);
-        setRR(false);
     }
     
 
@@ -30,11 +28,11 @@ export const Header = (props) => {
         <div className="header">
             <h1>Movie Rating App</h1>
             {!randomRating ? 
-            <button className="random-rating-btn" onClick={setRandomRating}>
+            <button className="random-rating-btn" onClick={() => {setRandomRating(); setRR(true)}}>
                 <i className="fas fa-star"></i>Random Rating
             </button>
             :
-            <button className="random-rating-btn" onClick={stopRandomRating}>
+            <button className="random-rating-btn" onClick={() => {stopRandomRating(); setRR(false   )}}>
                 <i className="fas fa-sync fa-spin"></i>Stop Random Rating
             </button>
             }

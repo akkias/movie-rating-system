@@ -2,7 +2,7 @@
 export function moviesData(initialState = {movies: []}, action) {
     switch(action.type) {
         case 'GET_MOVIES': 
-            return action.movies
+            return action.payload.movies
         case 'SET_RATING': 
             const i = action.payload.index;
             return[

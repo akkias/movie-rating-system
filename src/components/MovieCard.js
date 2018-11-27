@@ -1,7 +1,5 @@
 import React from 'react';
 import {sortDesc} from '../utils/functionUtils'
-
-
 import Rating from 'react-rating';
 
 const renderMovie = (props) => {
@@ -19,7 +17,7 @@ const renderMovie = (props) => {
                                 emptySymbol="far fa-star"
                                 fullSymbol="fas fa-star"
                                 className="movie-card-rating"
-                                onClick={(rating) => props.setRating(rating, index, movie.id)}
+                                onClick={(rating) => props.setRatingFunc(rating, index, movie.id)}
                             />
                         </div>
                     </div>
