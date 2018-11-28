@@ -3,9 +3,8 @@ import {sortDesc} from '../utils/functionUtils'
 import Rating from 'react-rating';
 
 const renderMovie = (props) => {
-    const movies = props.movies
     return(
-            movies && sortDesc(movies).map((movie, index) => {
+            props.movies && sortDesc(props.movies).map((movie, index) => {
                 return(
                     <div className="movie-card" key={movie.id}>
                         <div className="movie-card-poster">

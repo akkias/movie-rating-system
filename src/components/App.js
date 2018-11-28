@@ -4,7 +4,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Movies />
+        <Movies store={this.props.store} />
       </div>
     );
   }

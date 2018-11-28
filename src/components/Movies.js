@@ -5,7 +5,8 @@ import MovieCard from './MovieCard';
 import Header from './Header';
 import Spinner from './Spinner';
 import {getMovies, setRating} from '../actions';
-import {fetchAllMovies, handleRatingChange} from '../utils/apiUtils'
+import {get, handleRatingChange} from '../utils/apiUtils'
+
 
 class Movies extends Component {
     constructor() {
@@ -16,33 +17,45 @@ class Movies extends Component {
     }
     
     componentDidMount() {
-        fetchAllMovies();
+        get('https://movies-dbase.herokuapp.com/movies').then(
+            response => this.props.getMovies(response)
+         ).catch(
+            error => console.log(error)
+         );
+    }
+
+    setMovieRating = (rating, index, id) => {
+        handleRatingChange(rating, index, id)
+        .then(this.props.setRating(rating, index, id))
+        .catch(
+            error => console.log(error)
+         );
     }
     
     render() {
         return(
-            <>
+            <div>
                 { this.props.movies.length ?
                     <div>
-                        <Header setRandomRatingFunc={handleRatingChange} />
-                        <MovieCard movies={this.props.movies} setRatingFunc={handleRatingChange} />
+                        <Header />
+                        <MovieCard movies={this.props.movies} store={this.props.store} setRatingFunc={this.setMovieRating} />
                     </div>
                 : 
                 <div className="page-loader"><Spinner size="lg" /></div>
                 }
-            </>
+            </div>
         )
     }
 }
 
-const mapStateToProps =  function(state) { 
+const mapStateToProps =  (state) => { 
     return {
         movies: state.moviesData
     }
 }
-function matchDispatchToProps(dispatch){
-return bindActionCreators({setRating, getMovies}, dispatch);
-}
+const mapDispatchToProps = dispatch => bindActionCreators(
+    { setRating, getMovies }, dispatch
+)
 
-export default connect(mapStateToProps, matchDispatchToProps)(Movies);
+export default connect(mapStateToProps, mapDispatchToProps)(Movies);
 export { Movies };

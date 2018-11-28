@@ -3258,6 +3258,7 @@ fb-watchman@^2.0.0:
 fetch-mock@^7.2.5:
   version "7.2.5"
   resolved "https://registry.yarnpkg.com/fetch-mock/-/fetch-mock-7.2.5.tgz#4682f51b9fa74d790e10a471066cb22f3ff84d48"
+  integrity sha512-ZdlNxw2xFE2VuGikqWYBcshbfMtWM0k7zWevYgjrFuTiJ1+S7+xjRMxDG1cy45xkpEcqzZAAeqL+uDL5qLZV7g==
   dependencies:
     babel-polyfill "^6.26.0"
     glob-to-regexp "^0.4.0"
@@ -5570,6 +5571,7 @@ no-case@^2.2.0:
 node-fetch@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
+  integrity sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
 
 node-forge@0.7.5:
   version "0.7.5"

@@ -6,6 +6,6 @@ import {moviesData} from './reducers'
 import App from './components/App';
 
 const rootReducer = combineReducers({moviesData});
-export const movieStore = createStore(rootReducer);
+export const store = createStore(rootReducer);
 
-ReactDOM.render(<Provider store={movieStore}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App store={store} /></Provider>, document.getElementById('root'));
