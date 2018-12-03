@@ -37,7 +37,7 @@ class Movies extends Component {
             <div>
                 { this.props.movies.length ?
                     <div>
-                        <Header />
+                        <Header store={this.props.store} />
                         <MovieCard movies={this.props.movies} store={this.props.store} setRatingFunc={this.setMovieRating} />
                     </div>
                 : 

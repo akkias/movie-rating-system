@@ -24,7 +24,7 @@ class Header extends Component {
                 let randIndex = getRandomNum(11);
                 let randId = getRandomNum(12);
                 handleRatingChange(randRating,randIndex, randId)
-                .then(this.props.store.dispatch(setRating(randRating, randIndex, randId)));
+                .then(props.store.dispatch(setRating(randRating, randIndex, randId)));
                 let randomTime = Math.round(Math.random() * (max - min + 1) + min);
                 setTM = setTimeout(myFunction, randomTime * 1000);
             }
